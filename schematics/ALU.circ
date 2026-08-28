@@ -170,6 +170,9 @@
     <comp lib="0" loc="(4060,3770)" name="Pull Resistor">
       <a name="facing" val="north"/>
     </comp>
+    <comp lib="0" loc="(4100,1870)" name="Pull Resistor">
+      <a name="facing" val="north"/>
+    </comp>
     <comp lib="0" loc="(4100,3860)" name="Ground"/>
     <comp lib="0" loc="(4150,3850)" name="Pull Resistor">
       <a name="facing" val="north"/>
@@ -400,6 +403,9 @@
     </comp>
     <comp lib="1" loc="(4070,1780)" name="OR Gate">
       <a name="size" val="30"/>
+    </comp>
+    <comp lib="1" loc="(4090,1870)" name="Controlled Buffer">
+      <a name="control" val="left"/>
     </comp>
     <comp lib="1" loc="(4100,2020)" name="AND Gate">
       <a name="size" val="30"/>
@@ -886,7 +892,7 @@
     <wire from="(3490,1810)" to="(3500,1810)"/>
     <wire from="(3490,1850)" to="(4180,1850)"/>
     <wire from="(3500,1870)" to="(3500,3080)"/>
-    <wire from="(3500,1870)" to="(4100,1870)"/>
+    <wire from="(3500,1870)" to="(4070,1870)"/>
     <wire from="(3500,3080)" to="(3500,3250)"/>
     <wire from="(3500,3080)" to="(3620,3080)"/>
     <wire from="(3500,3250)" to="(3500,3320)"/>
@@ -920,6 +926,7 @@
     <wire from="(3550,1710)" to="(3770,1710)"/>
     <wire from="(3550,1730)" to="(3550,1800)"/>
     <wire from="(3550,1730)" to="(3800,1730)"/>
+    <wire from="(3550,1800)" to="(3590,1800)"/>
     <wire from="(3570,1180)" to="(3570,1240)"/>
     <wire from="(3570,1180)" to="(3740,1180)"/>
     <wire from="(3570,1240)" to="(3570,1290)"/>
@@ -938,6 +945,8 @@
     <wire from="(3570,1690)" to="(3740,1690)"/>
     <wire from="(3570,1750)" to="(3570,1840)"/>
     <wire from="(3570,1750)" to="(3830,1750)"/>
+    <wire from="(3590,1800)" to="(3590,1830)"/>
+    <wire from="(3590,1830)" to="(4080,1830)"/>
     <wire from="(3610,3060)" to="(3620,3060)"/>
     <wire from="(3650,3070)" to="(3740,3070)"/>
     <wire from="(3660,3030)" to="(3660,3090)"/>
@@ -1284,6 +1293,8 @@
     <wire from="(4080,1270)" to="(4080,1330)"/>
     <wire from="(4080,1440)" to="(4080,1500)"/>
     <wire from="(4080,1610)" to="(4080,1670)"/>
+    <wire from="(4080,1830)" to="(4080,1860)"/>
+    <wire from="(4090,1870)" to="(4100,1870)"/>
     <wire from="(4100,1820)" to="(4100,1870)"/>
     <wire from="(4100,2020)" to="(4130,2020)"/>
     <wire from="(4100,2080)" to="(4130,2080)"/>
