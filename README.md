@@ -76,14 +76,4 @@ To improve operational speed, signal stability, and layout density, the hardware
 
 ### 3. Diagnostics & Clocking
 * **LED Status Indicators:** Every critical control line, data bus, address line, register output (R0–R3), and status flag (Carry/Zero) is equipped with LEDs for real-time visual hardware debugging.
-* **Clock Generator:** Features dual modes: single-step mode for manual instruction-by-instruction debugging and automated clock generation based on NE555 or 74HC14 Schmitt triggers.
-
----
-
-## 📂 Repository Structure
-
-```text
-├── sim/                # Logisim-Evolution simulation files and schematics
-├── hardware/           # KiCad / EasyEDA schematics, PCB layouts, and Bill of Materials (BOM)
-├── docs/               # ISA specifications, timing diagrams, and control signal tables
-└── README.md           # Main repository documentation
+* **Clock Generator:** Features dual modes: single-step mode for manual instruction-by-instruction debugging and automated clock generation based on NE555 or 74HC14 Schmitt trigges.
