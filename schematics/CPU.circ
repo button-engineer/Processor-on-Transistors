@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<project source="4.0.0" version="1.0">
-  This file is intended to be loaded by Logisim-evolution v4.0.0(https://github.com/logisim-evolution/).
+<project source="4.1.0" version="1.0">
+  This file is intended to be loaded by Logisim-evolution v4.1.0(https://github.com/logisim-evolution/).
 
   <lib desc="#Wiring" name="0">
     <tool name="Splitter">
@@ -17,17 +17,21 @@
     <tool name="NOT Gate">
       <a name="facing" val="north"/>
     </tool>
+    <tool name="AND Gate">
+      <a name="facing" val="north"/>
+    </tool>
   </lib>
   <lib desc="#Plexers" name="2"/>
   <lib desc="#Arithmetic" name="3"/>
-  <lib desc="#Memory" name="4"/>
-  <lib desc="#I/O" name="5"/>
-  <lib desc="#TTL" name="6"/>
-  <lib desc="#TCL" name="7"/>
-  <lib desc="#Base" name="8"/>
-  <lib desc="#BFH-Praktika" name="9"/>
-  <lib desc="#Input/Output-Extra" name="10"/>
-  <lib desc="#Soc" name="11"/>
+  <lib desc="#FPArithmetic" name="4"/>
+  <lib desc="#Memory" name="5"/>
+  <lib desc="#I/O" name="6"/>
+  <lib desc="#TTL" name="7"/>
+  <lib desc="#TCL" name="8"/>
+  <lib desc="#Base" name="9"/>
+  <lib desc="#BFH-Praktika" name="10"/>
+  <lib desc="#Input/Output-Extra" name="11"/>
+  <lib desc="#Soc" name="12"/>
   <main name="main"/>
   <options>
     <a name="gateUndefined" val="ignore"/>
@@ -35,15 +39,15 @@
     <a name="simrand" val="0"/>
   </options>
   <mappings>
-    <tool lib="8" map="Button2" name="Poke Tool"/>
-    <tool lib="8" map="Button3" name="Menu Tool"/>
-    <tool lib="8" map="Ctrl Button1" name="Menu Tool"/>
+    <tool lib="9" map="Button2" name="Poke Tool"/>
+    <tool lib="9" map="Button3" name="Menu Tool"/>
+    <tool lib="9" map="Ctrl Button1" name="Menu Tool"/>
   </mappings>
   <toolbar>
-    <tool lib="8" name="Poke Tool"/>
-    <tool lib="8" name="Edit Tool"/>
-    <tool lib="8" name="Wiring Tool"/>
-    <tool lib="8" name="Text Tool"/>
+    <tool lib="9" name="Poke Tool"/>
+    <tool lib="9" name="Edit Tool"/>
+    <tool lib="9" name="Wiring Tool"/>
+    <tool lib="9" name="Text Tool"/>
     <sep/>
     <tool lib="0" name="Pin"/>
     <tool lib="0" name="Pin">
@@ -58,14 +62,14 @@
     <tool lib="1" name="NAND Gate"/>
     <tool lib="1" name="NOR Gate"/>
     <sep/>
-    <tool lib="4" name="D Flip-Flop"/>
-    <tool lib="4" name="Register"/>
+    <tool lib="5" name="D Flip-Flop"/>
+    <tool lib="5" name="Register"/>
   </toolbar>
   <circuit name="main">
     <a name="appearance" val="logisim_evolution"/>
     <a name="circuit" val="main"/>
     <a name="circuitnamedboxfixedsize" val="true"/>
-    <a name="simulationFrequency" val="1.0"/>
+    <a name="simulationFrequency" val="64.0"/>
     <comp lib="0" loc="(1010,1060)" name="Pull Resistor">
       <a name="facing" val="north"/>
     </comp>
@@ -225,7 +229,6 @@
       <a name="porsize" val="1"/>
     </comp>
     <comp lib="0" loc="(3000,460)" name="Pull Resistor"/>
-    <comp lib="0" loc="(3070,3550)" name="Pull Resistor"/>
     <comp lib="0" loc="(3080,4440)" name="Clock">
       <a name="appearance" val="NewPins"/>
     </comp>
@@ -238,7 +241,6 @@
     <comp lib="0" loc="(3100,3400)" name="Pull Resistor">
       <a name="facing" val="west"/>
     </comp>
-    <comp lib="0" loc="(3160,3480)" name="Pull Resistor"/>
     <comp lib="0" loc="(3210,2300)" name="Pull Resistor">
       <a name="facing" val="north"/>
     </comp>
@@ -784,17 +786,23 @@
       <a name="facing" val="south"/>
       <a name="inputs" val="3"/>
     </comp>
-    <comp lib="1" loc="(3060,3550)" name="Controlled Buffer"/>
     <comp lib="1" loc="(3080,3350)" name="Controlled Buffer"/>
     <comp lib="1" loc="(3100,3380)" name="NOT Gate">
       <a name="facing" val="west"/>
     </comp>
+    <comp lib="1" loc="(3100,3630)" name="AND Gate">
+      <a name="facing" val="north"/>
+      <a name="inputs" val="4"/>
+      <a name="size" val="30"/>
+    </comp>
     <comp lib="1" loc="(3110,1380)" name="Controlled Buffer">
+      <a name="facing" val="north"/>
+    </comp>
+    <comp lib="1" loc="(3130,3710)" name="NOT Gate">
       <a name="facing" val="north"/>
     </comp>
     <comp lib="1" loc="(3140,2360)" name="NOT Gate"/>
     <comp lib="1" loc="(3150,3260)" name="NOT Gate"/>
-    <comp lib="1" loc="(3150,3480)" name="Controlled Buffer"/>
     <comp lib="1" loc="(3160,2320)" name="AND Gate">
       <a name="facing" val="north"/>
       <a name="size" val="30"/>
@@ -1023,6 +1031,9 @@
     </comp>
     <comp lib="1" loc="(6340,2690)" name="Controlled Buffer">
       <a name="control" val="left"/>
+    </comp>
+    <comp lib="1" loc="(6360,1260)" name="OR Gate">
+      <a name="size" val="30"/>
     </comp>
     <comp lib="1" loc="(6390,2550)" name="Controlled Buffer">
       <a name="control" val="left"/>
@@ -1449,108 +1460,104 @@
     <comp lib="2" loc="(780,2780)" name="Decoder">
       <a name="select" val="2"/>
     </comp>
-    <comp lib="4" loc="(1090,1050)" name="D Flip-Flop">
+    <comp lib="5" loc="(1090,1050)" name="D Flip-Flop">
       <a name="appearance" val="logisim_evolution"/>
     </comp>
-    <comp lib="4" loc="(1090,1150)" name="D Flip-Flop">
+    <comp lib="5" loc="(1090,1150)" name="D Flip-Flop">
       <a name="appearance" val="logisim_evolution"/>
     </comp>
-    <comp lib="4" loc="(1090,1250)" name="D Flip-Flop">
+    <comp lib="5" loc="(1090,1250)" name="D Flip-Flop">
       <a name="appearance" val="logisim_evolution"/>
     </comp>
-    <comp lib="4" loc="(1090,1390)" name="D Flip-Flop">
+    <comp lib="5" loc="(1090,1390)" name="D Flip-Flop">
       <a name="appearance" val="logisim_evolution"/>
     </comp>
-    <comp lib="4" loc="(1090,1490)" name="D Flip-Flop">
+    <comp lib="5" loc="(1090,1490)" name="D Flip-Flop">
       <a name="appearance" val="logisim_evolution"/>
     </comp>
-    <comp lib="4" loc="(1090,1590)" name="D Flip-Flop">
+    <comp lib="5" loc="(1090,1590)" name="D Flip-Flop">
       <a name="appearance" val="logisim_evolution"/>
     </comp>
-    <comp lib="4" loc="(1090,1690)" name="D Flip-Flop">
+    <comp lib="5" loc="(1090,1690)" name="D Flip-Flop">
       <a name="appearance" val="logisim_evolution"/>
     </comp>
-    <comp lib="4" loc="(1090,1830)" name="D Flip-Flop">
+    <comp lib="5" loc="(1090,1830)" name="D Flip-Flop">
       <a name="appearance" val="logisim_evolution"/>
     </comp>
-    <comp lib="4" loc="(1090,1930)" name="D Flip-Flop">
+    <comp lib="5" loc="(1090,1930)" name="D Flip-Flop">
       <a name="appearance" val="logisim_evolution"/>
     </comp>
-    <comp lib="4" loc="(1090,2030)" name="D Flip-Flop">
+    <comp lib="5" loc="(1090,2030)" name="D Flip-Flop">
       <a name="appearance" val="logisim_evolution"/>
     </comp>
-    <comp lib="4" loc="(1090,2130)" name="D Flip-Flop">
+    <comp lib="5" loc="(1090,2130)" name="D Flip-Flop">
       <a name="appearance" val="logisim_evolution"/>
     </comp>
-    <comp lib="4" loc="(1090,2270)" name="D Flip-Flop">
+    <comp lib="5" loc="(1090,2270)" name="D Flip-Flop">
       <a name="appearance" val="logisim_evolution"/>
     </comp>
-    <comp lib="4" loc="(1090,2370)" name="D Flip-Flop">
+    <comp lib="5" loc="(1090,2370)" name="D Flip-Flop">
       <a name="appearance" val="logisim_evolution"/>
     </comp>
-    <comp lib="4" loc="(1090,2470)" name="D Flip-Flop">
+    <comp lib="5" loc="(1090,2470)" name="D Flip-Flop">
       <a name="appearance" val="logisim_evolution"/>
     </comp>
-    <comp lib="4" loc="(1090,2570)" name="D Flip-Flop">
+    <comp lib="5" loc="(1090,2570)" name="D Flip-Flop">
       <a name="appearance" val="logisim_evolution"/>
     </comp>
-    <comp lib="4" loc="(1090,950)" name="D Flip-Flop">
+    <comp lib="5" loc="(1090,950)" name="D Flip-Flop">
       <a name="appearance" val="logisim_evolution"/>
     </comp>
-    <comp lib="4" loc="(2500,330)" name="RAM">
+    <comp lib="5" loc="(2500,330)" name="RAM">
       <a name="appearance" val="logisim_evolution"/>
       <a name="dataWidth" val="4"/>
     </comp>
-    <comp lib="4" loc="(2740,3320)" name="D Flip-Flop">
+    <comp lib="5" loc="(2740,3320)" name="D Flip-Flop">
       <a name="appearance" val="logisim_evolution"/>
       <a name="trigger" val="falling"/>
     </comp>
-    <comp lib="4" loc="(2840,3360)" name="D Flip-Flop">
+    <comp lib="5" loc="(2840,3360)" name="D Flip-Flop">
       <a name="appearance" val="logisim_evolution"/>
       <a name="trigger" val="falling"/>
     </comp>
-    <comp lib="4" loc="(3010,2200)" name="D Flip-Flop">
+    <comp lib="5" loc="(3010,2200)" name="D Flip-Flop">
       <a name="appearance" val="logisim_evolution"/>
       <a name="trigger" val="falling"/>
     </comp>
-    <comp lib="4" loc="(3070,3250)" name="D Flip-Flop">
+    <comp lib="5" loc="(3070,3250)" name="D Flip-Flop">
       <a name="appearance" val="logisim_evolution"/>
       <a name="trigger" val="falling"/>
     </comp>
-    <comp lib="4" loc="(3110,3500)" name="D Flip-Flop">
+    <comp lib="5" loc="(3130,4390)" name="D Flip-Flop">
       <a name="appearance" val="logisim_evolution"/>
       <a name="trigger" val="falling"/>
     </comp>
-    <comp lib="4" loc="(3130,4390)" name="D Flip-Flop">
+    <comp lib="5" loc="(3140,2200)" name="D Flip-Flop">
       <a name="appearance" val="logisim_evolution"/>
       <a name="trigger" val="falling"/>
     </comp>
-    <comp lib="4" loc="(3140,2200)" name="D Flip-Flop">
+    <comp lib="5" loc="(3200,3430)" name="D Flip-Flop">
+      <a name="appearance" val="logisim_evolution"/>
+    </comp>
+    <comp lib="5" loc="(3230,4390)" name="D Flip-Flop">
       <a name="appearance" val="logisim_evolution"/>
       <a name="trigger" val="falling"/>
     </comp>
-    <comp lib="4" loc="(3200,3430)" name="D Flip-Flop">
-      <a name="appearance" val="logisim_evolution"/>
-    </comp>
-    <comp lib="4" loc="(3230,4390)" name="D Flip-Flop">
+    <comp lib="5" loc="(3280,3650)" name="D Flip-Flop">
       <a name="appearance" val="logisim_evolution"/>
       <a name="trigger" val="falling"/>
     </comp>
-    <comp lib="4" loc="(3280,3650)" name="D Flip-Flop">
+    <comp lib="5" loc="(3330,4390)" name="D Flip-Flop">
       <a name="appearance" val="logisim_evolution"/>
       <a name="trigger" val="falling"/>
     </comp>
-    <comp lib="4" loc="(3330,4390)" name="D Flip-Flop">
-      <a name="appearance" val="logisim_evolution"/>
-      <a name="trigger" val="falling"/>
-    </comp>
-    <comp lib="4" loc="(3630,2800)" name="D Flip-Flop">
+    <comp lib="5" loc="(3630,2800)" name="D Flip-Flop">
       <a name="appearance" val="logisim_evolution"/>
     </comp>
-    <comp lib="4" loc="(3740,2800)" name="D Flip-Flop">
+    <comp lib="5" loc="(3740,2800)" name="D Flip-Flop">
       <a name="appearance" val="logisim_evolution"/>
     </comp>
-    <comp lib="4" loc="(3820,3160)" name="ROM">
+    <comp lib="5" loc="(3820,3160)" name="ROM">
       <a name="appearance" val="logisim_evolution"/>
       <a name="contents">addr/data: 8 8
 b0 0 b8 0 b4 f bc f
@@ -1559,92 +1566,92 @@ e4 13 33 f0 f d0 10 99
 17
 </a>
     </comp>
-    <comp lib="4" loc="(3850,2800)" name="D Flip-Flop">
+    <comp lib="5" loc="(3850,2800)" name="D Flip-Flop">
       <a name="appearance" val="logisim_evolution"/>
     </comp>
-    <comp lib="4" loc="(3960,2800)" name="D Flip-Flop">
+    <comp lib="5" loc="(3960,2800)" name="D Flip-Flop">
       <a name="appearance" val="logisim_evolution"/>
     </comp>
-    <comp lib="4" loc="(3970,3700)" name="D Flip-Flop">
-      <a name="appearance" val="logisim_evolution"/>
-      <a name="trigger" val="falling"/>
-    </comp>
-    <comp lib="4" loc="(4070,2800)" name="D Flip-Flop">
-      <a name="appearance" val="logisim_evolution"/>
-    </comp>
-    <comp lib="4" loc="(4160,3700)" name="D Flip-Flop">
+    <comp lib="5" loc="(3970,3700)" name="D Flip-Flop">
       <a name="appearance" val="logisim_evolution"/>
       <a name="trigger" val="falling"/>
     </comp>
-    <comp lib="4" loc="(4180,2800)" name="D Flip-Flop">
+    <comp lib="5" loc="(4070,2800)" name="D Flip-Flop">
       <a name="appearance" val="logisim_evolution"/>
     </comp>
-    <comp lib="4" loc="(4290,2800)" name="D Flip-Flop">
-      <a name="appearance" val="logisim_evolution"/>
-    </comp>
-    <comp lib="4" loc="(4350,3700)" name="D Flip-Flop">
+    <comp lib="5" loc="(4160,3700)" name="D Flip-Flop">
       <a name="appearance" val="logisim_evolution"/>
       <a name="trigger" val="falling"/>
     </comp>
-    <comp lib="4" loc="(4400,2800)" name="D Flip-Flop">
+    <comp lib="5" loc="(4180,2800)" name="D Flip-Flop">
       <a name="appearance" val="logisim_evolution"/>
     </comp>
-    <comp lib="4" loc="(4540,3700)" name="D Flip-Flop">
+    <comp lib="5" loc="(4290,2800)" name="D Flip-Flop">
       <a name="appearance" val="logisim_evolution"/>
-      <a name="trigger" val="falling"/>
     </comp>
-    <comp lib="4" loc="(4730,3700)" name="D Flip-Flop">
-      <a name="appearance" val="logisim_evolution"/>
-      <a name="trigger" val="falling"/>
-    </comp>
-    <comp lib="4" loc="(4920,3700)" name="D Flip-Flop">
+    <comp lib="5" loc="(4350,3700)" name="D Flip-Flop">
       <a name="appearance" val="logisim_evolution"/>
       <a name="trigger" val="falling"/>
     </comp>
-    <comp lib="4" loc="(5110,3700)" name="D Flip-Flop">
+    <comp lib="5" loc="(4400,2800)" name="D Flip-Flop">
+      <a name="appearance" val="logisim_evolution"/>
+    </comp>
+    <comp lib="5" loc="(4540,3700)" name="D Flip-Flop">
       <a name="appearance" val="logisim_evolution"/>
       <a name="trigger" val="falling"/>
     </comp>
-    <comp lib="4" loc="(5300,3700)" name="D Flip-Flop">
+    <comp lib="5" loc="(4730,3700)" name="D Flip-Flop">
       <a name="appearance" val="logisim_evolution"/>
       <a name="trigger" val="falling"/>
     </comp>
-    <comp lib="4" loc="(6400,2460)" name="D Flip-Flop">
+    <comp lib="5" loc="(4920,3700)" name="D Flip-Flop">
       <a name="appearance" val="logisim_evolution"/>
       <a name="trigger" val="falling"/>
     </comp>
-    <comp lib="4" loc="(6450,3110)" name="D Flip-Flop">
+    <comp lib="5" loc="(5110,3700)" name="D Flip-Flop">
       <a name="appearance" val="logisim_evolution"/>
       <a name="trigger" val="falling"/>
     </comp>
-    <comp lib="4" loc="(6710,2630)" name="D Flip-Flop">
+    <comp lib="5" loc="(5300,3700)" name="D Flip-Flop">
+      <a name="appearance" val="logisim_evolution"/>
+      <a name="trigger" val="falling"/>
+    </comp>
+    <comp lib="5" loc="(6400,2460)" name="D Flip-Flop">
+      <a name="appearance" val="logisim_evolution"/>
+      <a name="trigger" val="falling"/>
+    </comp>
+    <comp lib="5" loc="(6450,3110)" name="D Flip-Flop">
+      <a name="appearance" val="logisim_evolution"/>
+      <a name="trigger" val="falling"/>
+    </comp>
+    <comp lib="5" loc="(6710,2630)" name="D Flip-Flop">
       <a name="appearance" val="logisim_evolution"/>
     </comp>
-    <comp lib="4" loc="(6760,1210)" name="D Flip-Flop">
+    <comp lib="5" loc="(6760,1210)" name="D Flip-Flop">
       <a name="appearance" val="logisim_evolution"/>
     </comp>
-    <comp lib="4" loc="(6820,3280)" name="D Flip-Flop">
+    <comp lib="5" loc="(6820,3280)" name="D Flip-Flop">
       <a name="appearance" val="logisim_evolution"/>
     </comp>
-    <comp lib="4" loc="(6940,3280)" name="D Flip-Flop">
+    <comp lib="5" loc="(6940,3280)" name="D Flip-Flop">
       <a name="appearance" val="logisim_evolution"/>
     </comp>
-    <comp lib="4" loc="(6950,2630)" name="D Flip-Flop">
+    <comp lib="5" loc="(6950,2630)" name="D Flip-Flop">
       <a name="appearance" val="logisim_evolution"/>
     </comp>
-    <comp lib="4" loc="(7060,3280)" name="D Flip-Flop">
+    <comp lib="5" loc="(7060,3280)" name="D Flip-Flop">
       <a name="appearance" val="logisim_evolution"/>
     </comp>
-    <comp lib="4" loc="(7180,3280)" name="D Flip-Flop">
+    <comp lib="5" loc="(7180,3280)" name="D Flip-Flop">
       <a name="appearance" val="logisim_evolution"/>
     </comp>
-    <comp lib="4" loc="(7190,2630)" name="D Flip-Flop">
+    <comp lib="5" loc="(7190,2630)" name="D Flip-Flop">
       <a name="appearance" val="logisim_evolution"/>
     </comp>
-    <comp lib="4" loc="(7430,2630)" name="D Flip-Flop">
+    <comp lib="5" loc="(7430,2630)" name="D Flip-Flop">
       <a name="appearance" val="logisim_evolution"/>
     </comp>
-    <comp lib="5" loc="(2200,2510)" name="LED"/>
+    <comp lib="6" loc="(2200,2510)" name="LED"/>
     <wire from="(1000,1060)" to="(1010,1060)"/>
     <wire from="(1000,1160)" to="(1010,1160)"/>
     <wire from="(1000,1260)" to="(1010,1260)"/>
@@ -2358,6 +2365,9 @@ e4 13 33 f0 f d0 10 99
     <wire from="(2910,110)" to="(3170,110)"/>
     <wire from="(2910,3210)" to="(2910,3220)"/>
     <wire from="(2910,3220)" to="(2940,3220)"/>
+    <wire from="(2910,3320)" to="(2910,3610)"/>
+    <wire from="(2910,3320)" to="(3090,3320)"/>
+    <wire from="(2910,3610)" to="(3100,3610)"/>
     <wire from="(2910,370)" to="(2910,440)"/>
     <wire from="(2920,3330)" to="(2920,3590)"/>
     <wire from="(2920,3330)" to="(3150,3330)"/>
@@ -2377,10 +2387,8 @@ e4 13 33 f0 f d0 10 99
     <wire from="(2960,2300)" to="(3210,2300)"/>
     <wire from="(2960,3220)" to="(2960,3240)"/>
     <wire from="(2960,3220)" to="(2990,3220)"/>
-    <wire from="(2960,3300)" to="(2960,3320)"/>
+    <wire from="(2960,3300)" to="(2960,3350)"/>
     <wire from="(2960,3300)" to="(3000,3300)"/>
-    <wire from="(2960,3320)" to="(2960,3350)"/>
-    <wire from="(2960,3320)" to="(3090,3320)"/>
     <wire from="(2960,3350)" to="(2960,3450)"/>
     <wire from="(2960,3470)" to="(2960,3630)"/>
     <wire from="(2960,3660)" to="(2960,3750)"/>
@@ -2393,20 +2401,22 @@ e4 13 33 f0 f d0 10 99
     <wire from="(2970,3030)" to="(3050,3030)"/>
     <wire from="(2970,3460)" to="(3060,3460)"/>
     <wire from="(2970,3660)" to="(2970,3720)"/>
-    <wire from="(2970,3720)" to="(3100,3720)"/>
+    <wire from="(2970,3720)" to="(3090,3720)"/>
     <wire from="(2970,410)" to="(2970,450)"/>
     <wire from="(2980,2210)" to="(2980,2280)"/>
     <wire from="(2980,2210)" to="(3000,2210)"/>
     <wire from="(2980,2280)" to="(3080,2280)"/>
     <wire from="(2980,3750)" to="(2980,3900)"/>
-    <wire from="(2980,3930)" to="(2980,4170)"/>
+    <wire from="(2980,3930)" to="(2980,3990)"/>
+    <wire from="(2980,3990)" to="(2980,4170)"/>
+    <wire from="(2980,3990)" to="(3080,3990)"/>
     <wire from="(2980,400)" to="(3050,400)"/>
     <wire from="(2980,4170)" to="(3090,4170)"/>
     <wire from="(2990,3210)" to="(2990,3220)"/>
     <wire from="(3000,3230)" to="(3000,3300)"/>
     <wire from="(3000,3230)" to="(3150,3230)"/>
     <wire from="(3000,3440)" to="(3000,3760)"/>
-    <wire from="(3000,3760)" to="(3190,3760)"/>
+    <wire from="(3000,3760)" to="(3130,3760)"/>
     <wire from="(3000,4440)" to="(3010,4440)"/>
     <wire from="(3000,460)" to="(3030,460)"/>
     <wire from="(3010,3000)" to="(3010,3120)"/>
@@ -2423,10 +2433,8 @@ e4 13 33 f0 f d0 10 99
     <wire from="(3020,3830)" to="(3110,3830)"/>
     <wire from="(3030,150)" to="(3030,430)"/>
     <wire from="(3030,150)" to="(3290,150)"/>
-    <wire from="(3030,3480)" to="(3030,3550)"/>
-    <wire from="(3030,3480)" to="(3130,3480)"/>
-    <wire from="(3030,3550)" to="(3030,3770)"/>
-    <wire from="(3030,3550)" to="(3040,3550)"/>
+    <wire from="(3030,3480)" to="(3030,3770)"/>
+    <wire from="(3030,3480)" to="(3190,3480)"/>
     <wire from="(3030,450)" to="(3030,460)"/>
     <wire from="(3040,3050)" to="(3040,3070)"/>
     <wire from="(3040,3090)" to="(3040,3120)"/>
@@ -2436,7 +2444,6 @@ e4 13 33 f0 f d0 10 99
     <wire from="(3040,3810)" to="(3100,3810)"/>
     <wire from="(3040,440)" to="(3050,440)"/>
     <wire from="(3050,320)" to="(3050,360)"/>
-    <wire from="(3050,3560)" to="(3080,3560)"/>
     <wire from="(3050,360)" to="(3050,400)"/>
     <wire from="(3050,400)" to="(3050,440)"/>
     <wire from="(3050,440)" to="(3050,660)"/>
@@ -2455,23 +2462,20 @@ e4 13 33 f0 f d0 10 99
     <wire from="(3060,3240)" to="(3120,3240)"/>
     <wire from="(3060,3420)" to="(3060,3460)"/>
     <wire from="(3060,3420)" to="(3360,3420)"/>
-    <wire from="(3060,3550)" to="(3070,3550)"/>
     <wire from="(3070,3360)" to="(3070,3380)"/>
     <wire from="(3070,3380)" to="(3100,3380)"/>
-    <wire from="(3070,3550)" to="(3100,3550)"/>
     <wire from="(3080,2250)" to="(3080,2280)"/>
     <wire from="(3080,2610)" to="(3080,3160)"/>
     <wire from="(3080,2610)" to="(4030,2610)"/>
     <wire from="(3080,3350)" to="(3090,3350)"/>
-    <wire from="(3080,3510)" to="(3080,3560)"/>
-    <wire from="(3080,3510)" to="(3100,3510)"/>
-    <wire from="(3080,3560)" to="(3080,3580)"/>
-    <wire from="(3080,3580)" to="(3180,3580)"/>
+    <wire from="(3080,3660)" to="(3080,3990)"/>
     <wire from="(3080,4440)" to="(3090,4440)"/>
     <wire from="(3090,3310)" to="(3090,3320)"/>
     <wire from="(3090,3350)" to="(3090,3400)"/>
     <wire from="(3090,3350)" to="(3150,3350)"/>
     <wire from="(3090,3400)" to="(3100,3400)"/>
+    <wire from="(3090,3660)" to="(3090,3720)"/>
+    <wire from="(3090,3720)" to="(3100,3720)"/>
     <wire from="(3090,4170)" to="(3090,4440)"/>
     <wire from="(3090,4170)" to="(5600,4170)"/>
     <wire from="(3090,4440)" to="(3120,4440)"/>
@@ -2480,6 +2484,7 @@ e4 13 33 f0 f d0 10 99
     <wire from="(3100,2250)" to="(3100,2360)"/>
     <wire from="(3100,2250)" to="(3130,2250)"/>
     <wire from="(3100,2360)" to="(3110,2360)"/>
+    <wire from="(3100,3610)" to="(3100,3630)"/>
     <wire from="(3100,3720)" to="(3100,3810)"/>
     <wire from="(3100,3810)" to="(3470,3810)"/>
     <wire from="(3100,4400)" to="(3100,4460)"/>
@@ -2487,6 +2492,8 @@ e4 13 33 f0 f d0 10 99
     <wire from="(3100,4460)" to="(3180,4460)"/>
     <wire from="(3110,1400)" to="(3110,1920)"/>
     <wire from="(3110,1920)" to="(3850,1920)"/>
+    <wire from="(3110,3660)" to="(3110,3690)"/>
+    <wire from="(3110,3690)" to="(3130,3690)"/>
     <wire from="(3110,3830)" to="(3110,3840)"/>
     <wire from="(3110,3840)" to="(3190,3840)"/>
     <wire from="(3110,90)" to="(3110,1380)"/>
@@ -2495,25 +2502,23 @@ e4 13 33 f0 f d0 10 99
     <wire from="(3120,3190)" to="(3120,3240)"/>
     <wire from="(3120,3190)" to="(3160,3190)"/>
     <wire from="(3120,3240)" to="(3150,3240)"/>
+    <wire from="(3120,3660)" to="(3120,3680)"/>
+    <wire from="(3120,3680)" to="(3190,3680)"/>
     <wire from="(3130,2190)" to="(3130,2210)"/>
     <wire from="(3130,2190)" to="(3200,2190)"/>
     <wire from="(3130,3380)" to="(3190,3380)"/>
-    <wire from="(3130,3560)" to="(3130,3570)"/>
-    <wire from="(3130,3570)" to="(3220,3570)"/>
+    <wire from="(3130,3690)" to="(3130,3710)"/>
+    <wire from="(3130,3740)" to="(3130,3760)"/>
+    <wire from="(3130,3760)" to="(3190,3760)"/>
     <wire from="(3140,2360)" to="(3150,2360)"/>
-    <wire from="(3140,3490)" to="(3160,3490)"/>
     <wire from="(3150,2350)" to="(3150,2360)"/>
     <wire from="(3150,2850)" to="(3150,3230)"/>
     <wire from="(3150,2850)" to="(3520,2850)"/>
-    <wire from="(3150,3480)" to="(3160,3480)"/>
     <wire from="(3160,2260)" to="(3160,2320)"/>
     <wire from="(3160,3100)" to="(3160,3140)"/>
     <wire from="(3160,3100)" to="(3170,3100)"/>
     <wire from="(3160,3140)" to="(3160,3190)"/>
     <wire from="(3160,3140)" to="(3270,3140)"/>
-    <wire from="(3160,3480)" to="(3190,3480)"/>
-    <wire from="(3160,3490)" to="(3160,3510)"/>
-    <wire from="(3160,3550)" to="(3180,3550)"/>
     <wire from="(3170,110)" to="(3170,1420)"/>
     <wire from="(3170,110)" to="(3410,110)"/>
     <wire from="(3170,1440)" to="(3170,1900)"/>
@@ -2528,13 +2533,14 @@ e4 13 33 f0 f d0 10 99
     <wire from="(3180,3440)" to="(3180,3510)"/>
     <wire from="(3180,3440)" to="(3190,3440)"/>
     <wire from="(3180,3510)" to="(3190,3510)"/>
-    <wire from="(3180,3550)" to="(3180,3580)"/>
     <wire from="(3180,4400)" to="(3190,4400)"/>
     <wire from="(3180,4440)" to="(3180,4460)"/>
     <wire from="(3190,2070)" to="(3190,2140)"/>
     <wire from="(3190,2070)" to="(3920,2070)"/>
     <wire from="(3190,3250)" to="(3190,3380)"/>
     <wire from="(3190,3250)" to="(3200,3250)"/>
+    <wire from="(3190,3630)" to="(3190,3680)"/>
+    <wire from="(3190,3630)" to="(3310,3630)"/>
     <wire from="(3190,3760)" to="(3190,3840)"/>
     <wire from="(3190,3760)" to="(3450,3760)"/>
     <wire from="(3190,3840)" to="(3190,3960)"/>
@@ -2569,7 +2575,6 @@ e4 13 33 f0 f d0 10 99
     <wire from="(3210,2380)" to="(3210,3220)"/>
     <wire from="(3210,3220)" to="(3500,3220)"/>
     <wire from="(3220,3490)" to="(3220,3510)"/>
-    <wire from="(3220,3510)" to="(3220,3570)"/>
     <wire from="(3220,3710)" to="(3250,3710)"/>
     <wire from="(3230,130)" to="(3230,1460)"/>
     <wire from="(3230,130)" to="(3440,130)"/>
@@ -2605,7 +2610,9 @@ e4 13 33 f0 f d0 10 99
     <wire from="(3280,3150)" to="(3280,3160)"/>
     <wire from="(3280,3160)" to="(3310,3160)"/>
     <wire from="(3280,3260)" to="(3280,3300)"/>
+    <wire from="(3280,3300)" to="(3280,3400)"/>
     <wire from="(3280,3300)" to="(3320,3300)"/>
+    <wire from="(3280,3400)" to="(3380,3400)"/>
     <wire from="(3280,4400)" to="(3290,4400)"/>
     <wire from="(3280,4440)" to="(3280,4460)"/>
     <wire from="(3290,150)" to="(3290,1500)"/>
@@ -2633,6 +2640,8 @@ e4 13 33 f0 f d0 10 99
     <wire from="(3310,3160)" to="(3460,3160)"/>
     <wire from="(3310,3240)" to="(3310,3280)"/>
     <wire from="(3310,3280)" to="(3320,3280)"/>
+    <wire from="(3310,3560)" to="(3310,3630)"/>
+    <wire from="(3310,3560)" to="(3380,3560)"/>
     <wire from="(3330,3660)" to="(3390,3660)"/>
     <wire from="(3330,3700)" to="(3350,3700)"/>
     <wire from="(3350,3290)" to="(3360,3290)"/>
@@ -2644,6 +2653,7 @@ e4 13 33 f0 f d0 10 99
     <wire from="(3360,3590)" to="(3440,3590)"/>
     <wire from="(3380,2340)" to="(3380,3030)"/>
     <wire from="(3380,3030)" to="(3590,3030)"/>
+    <wire from="(3380,3400)" to="(3380,3560)"/>
     <wire from="(3380,4400)" to="(3390,4400)"/>
     <wire from="(3380,4440)" to="(3380,4460)"/>
     <wire from="(3380,90)" to="(3380,2320)"/>
@@ -3417,8 +3427,10 @@ e4 13 33 f0 f d0 10 99
     <wire from="(6220,1020)" to="(6480,1020)"/>
     <wire from="(6220,1130)" to="(6220,1190)"/>
     <wire from="(6220,1130)" to="(6390,1130)"/>
-    <wire from="(6220,1190)" to="(6220,1280)"/>
+    <wire from="(6220,1190)" to="(6220,1270)"/>
     <wire from="(6220,1190)" to="(6480,1190)"/>
+    <wire from="(6220,1270)" to="(6220,1280)"/>
+    <wire from="(6220,1270)" to="(6330,1270)"/>
     <wire from="(6220,620)" to="(6220,680)"/>
     <wire from="(6220,620)" to="(6390,620)"/>
     <wire from="(6220,680)" to="(6220,730)"/>
@@ -3431,8 +3443,8 @@ e4 13 33 f0 f d0 10 99
     <wire from="(6220,850)" to="(6480,850)"/>
     <wire from="(6220,960)" to="(6220,1020)"/>
     <wire from="(6220,960)" to="(6390,960)"/>
-    <wire from="(6240,1240)" to="(6240,1270)"/>
-    <wire from="(6240,1270)" to="(6730,1270)"/>
+    <wire from="(6240,1240)" to="(6240,1250)"/>
+    <wire from="(6240,1250)" to="(6330,1250)"/>
     <wire from="(6260,2500)" to="(6270,2500)"/>
     <wire from="(6300,2510)" to="(6390,2510)"/>
     <wire from="(6310,2470)" to="(6310,2530)"/>
@@ -3451,6 +3463,7 @@ e4 13 33 f0 f d0 10 99
     <wire from="(6310,3410)" to="(6600,3410)"/>
     <wire from="(6330,2650)" to="(6330,2680)"/>
     <wire from="(6340,2690)" to="(6410,2690)"/>
+    <wire from="(6360,1260)" to="(6580,1260)"/>
     <wire from="(6380,2450)" to="(6380,2470)"/>
     <wire from="(6380,2450)" to="(6480,2450)"/>
     <wire from="(6380,2470)" to="(6390,2470)"/>
@@ -3623,6 +3636,8 @@ e4 13 33 f0 f d0 10 99
     <wire from="(6570,3110)" to="(6570,3140)"/>
     <wire from="(6570,3110)" to="(6580,3110)"/>
     <wire from="(6570,3140)" to="(6580,3140)"/>
+    <wire from="(6580,1260)" to="(6580,1270)"/>
+    <wire from="(6580,1270)" to="(6730,1270)"/>
     <wire from="(6580,2680)" to="(6590,2680)"/>
     <wire from="(6580,3140)" to="(6580,3350)"/>
     <wire from="(6590,3360)" to="(6660,3360)"/>
